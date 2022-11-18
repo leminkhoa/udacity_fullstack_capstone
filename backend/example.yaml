@@ -1,0 +1,25 @@
+Transaction:
+  id: abc
+  user_id: 1
+  amount: 20000
+  transaction_type: 1
+  category_id: 2
+  date: 24/11/2022
+
+Transaction_Type:
+  id: 1
+  type: Out
+
+
+Category:
+  id: 2
+  transaction_type_id: 1
+  type: restaurant
+
+
+User:
+  id: 1
+  name: Khoa
+
+
+    
