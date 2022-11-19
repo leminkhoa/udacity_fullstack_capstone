@@ -1,10 +1,10 @@
 import flask 
 from flask import jsonify
 
-blueprint = flask.Blueprint('error_handler', __name__)
+errorhandler_blueprint = flask.Blueprint('error_handler', __name__)
 
 
-@blueprint.app_errorhandler(400)
+@errorhandler_blueprint.app_errorhandler(400)
 def bad_request(error):
     return jsonify({
         "success": False,
@@ -13,7 +13,7 @@ def bad_request(error):
     }), 400
 
 
-@blueprint.app_errorhandler(404)
+@errorhandler_blueprint.app_errorhandler(404)
 def page_not_found(error):
     return jsonify({
         "success": False,
@@ -22,7 +22,7 @@ def page_not_found(error):
     }), 404
 
 
-@blueprint.app_errorhandler(422)
+@errorhandler_blueprint.app_errorhandler(422)
 def unprocessable_entity(error):
     return jsonify({
         "success": False,
@@ -31,7 +31,7 @@ def unprocessable_entity(error):
     }), 422
 
 
-@blueprint.app_errorhandler(500)
+@errorhandler_blueprint.app_errorhandler(500)
 def internal_server_error(error):
     return jsonify({
         "success": False,

@@ -4,7 +4,13 @@ import sys
 from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
 
-from . import error_handler, controllers
+from models.models import setup_db
+from .controllers import (
+    controllers_blueprint, 
+    controllers_transactions,
+    controllers_users
+)
+from .error_handler import errorhandler_blueprint
 
 
 TRANSACTIONS_PER_PAGE = 5
@@ -24,11 +30,13 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
     # Load config
-    app.config.from_object('config.AppConfig')
+    app.config.from_object('config')
     # Set up error handler
-    app.register_blueprint(error_handler.blueprint)
+    app.register_blueprint(error_handler.errorhandler_blueprint)
     # Set up app route
-    app.register_blueprint(controllers.blueprint)
+    app.register_blueprint(controllers_blueprint)
+    # Set up db
+    setup_db(app)
     # CORS
     cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
