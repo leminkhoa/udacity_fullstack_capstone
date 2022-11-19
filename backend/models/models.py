@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Date, Float
+from sqlalchemy import Column, String, Integer, DateTime, Float
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -18,10 +18,10 @@ Transaction
 class Transaction(db.Model):
     __tablename__ = 'transaction'
     # Cols
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, db.ForeignKey('user.id'), nullable=True)
-    category_id = Column(Integer, db.ForeignKey('category.id'), nullable=True)
-    date = Column(Date)
+    id = Column(String, primary_key=True)
+    user_id = Column(String, db.ForeignKey('user.id'), nullable=True)
+    category_id = Column(String, db.ForeignKey('category.id'), nullable=True)
+    date = Column(DateTime(timezone=True))
     amount = Column(Float)
     currency = Column(String)
 
@@ -48,9 +48,10 @@ class Transaction(db.Model):
         return {
             'id': self.id,
             'user_id': self.user_id,
-            'category_id': self.category,
-            'date': self.difficulty,
-            'amount': self.difficulty
+            'category_id': self.category_id,
+            'date': self.date,
+            'amount': self.amount,
+            'currency': self.currency,
         }
 
 
@@ -60,7 +61,7 @@ TransactionType
 class TransactionType(db.Model):
     __tablename__ = 'transaction_type'
     # Cols
-    id = Column(Integer, primary_key=True)
+    id = Column(String, primary_key=True)
     type = Column(String)
     # Rel
     categories = db.relationship('Category', backref='transaction_type', lazy=True)
@@ -82,15 +83,27 @@ Category
 class Category(db.Model):
     __tablename__ = 'category'
     # Cols
-    id = Column(Integer, primary_key=True)
-    transaction_type_id = Column(Integer, db.ForeignKey('transaction_type.id'))
+    id = Column(String, primary_key=True)
+    transaction_type_id = Column(String, db.ForeignKey('transaction_type.id'))
     type = Column(String)
     # Rel
     transactions = db.relationship('Transaction', backref='category', lazy=True)
 
     def __init__(self, id, transaction_type_id, type):
+        self.id = id
         self.transaction_type_id = transaction_type_id
         self.type = type
+
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
     def format(self):
         return {
@@ -106,7 +119,7 @@ User
 class User(db.Model):
     __tablename__ = 'user'
     # Cols
-    id = Column(Integer, primary_key=True)
+    id = Column(String, primary_key=True)
     name = Column(String)
     # Rel
     transactions = db.relationship('Transaction', backref='user', lazy=True)
@@ -114,6 +127,17 @@ class User(db.Model):
     def __init__(self, id, name):
         self.id = id
         self.name = name
+
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
     def format(self):
         return {

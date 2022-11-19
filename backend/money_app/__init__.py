@@ -7,23 +7,11 @@ from flask_cors import CORS
 from models.models import setup_db
 from .controllers import (
     controllers_blueprint, 
-    controllers_transactions,
-    controllers_users
+    transactions,
+    users,
+    categories
 )
 from .error_handler import errorhandler_blueprint
-
-
-TRANSACTIONS_PER_PAGE = 5
-
-
-def paginate_transactions(request, selection):
-    page = request.args.get('page', 1, type=int)
-    start = (page - 1) * TRANSACTIONS_PER_PAGE
-    end = start + TRANSACTIONS_PER_PAGE
-
-    transactions = [transaction.format() for transaction in selection]
-    current_transactions = transactions[start:end]
-    return current_transactions
 
 
 def create_app(test_config=None):
