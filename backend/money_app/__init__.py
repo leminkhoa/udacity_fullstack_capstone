@@ -8,7 +8,6 @@ from models.models import setup_db
 from .controllers import (
     controllers_blueprint, 
     transactions,
-    users,
     categories
 )
 from .error_handler import errorhandler_blueprint

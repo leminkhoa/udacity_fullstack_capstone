@@ -12,6 +12,15 @@ class CreateTransactionRequestSchema(Schema):
     amount = fields.Float(required=True)
     currency = fields.String(required=True)
 
+
+class SearchTransactionRequestSchema(Schema):
+    start_date = fields.DateTime(format="iso", required=True)
+    end_date = fields.DateTime(format="iso", required=True)
+
+
 class CreateCategoryRequestSchema(Schema):
     transaction_type_id = fields.String(required=True)
     type = fields.String(required=True)
+
+class SearchCategoryRequestSchema(Schema):
+    searchTerm = fields.String(required=True)

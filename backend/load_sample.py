@@ -58,60 +58,63 @@ category_6 = Category(
     type = 'Saving Interest'
 )
 
-
-#  User
-#  ----------------------------------------------------------------
-
-user_1 = User(
-    id = '1',
-    name = 'Test User 1'
-)
-
-user_2 = User(
-    id = '2',
-    name = 'Test User 2'
-)
-
-
 #  Transaction
 #  ----------------------------------------------------------------
 
 transaction_1 = Transaction(
     id = '1',
-    user_id = '1',
     category_id = '2',
-    date = datetime(2022, 1, 2, 3, 30, 0, tzinfo=UTC),
+    date = '2022-01-02T5:00:00+00:00',
     amount = 100,
     currency = '$',
+    note = 'dummy note',
 )
 
 transaction_2 = Transaction(
     id = '2',
-    user_id = '1',
     category_id = '4',
-    date = datetime(2022, 1, 15, 0, 0, 0, tzinfo=UTC),
+    date = '2022-01-03T6:30:00+07:00',
     amount = 250,
     currency = '$',
+    note = 'dummy note',
 )
 
 transaction_3 = Transaction(
     id = '3',
-    user_id = '1',
     category_id = '5',
-    date = datetime(2022, 1, 17, 0, 0, 0, tzinfo=UTC),
+    date = '2022-01-30T15:30:00+00:00',
     amount = 8000,
     currency = '$',
+    note = 'dummy note',
 )
 
 transaction_4 = Transaction(
     id = '4',
-    user_id = '2',
     category_id = '1',
-    date = datetime(2022, 1, 15, 0, 0, 0, tzinfo=UTC),
+    date = '2022-02-15T15:30:00+00:00',
     amount = 10,
     currency = '$',
+    note = 'dummy note',
 )
 
+transaction_5 = Transaction(
+    id = '5',
+    category_id = '1',
+    date = '2022-01-23T15:30:00+00:00',
+    amount = 10,
+    currency = '$',
+    note = 'dummy note',
+)
+
+
+transaction_6 = Transaction(
+    id = '6',
+    category_id = '4',
+    date = '2022-01-12T18:00:30+00:00',
+    amount = 300,
+    currency = '$',
+    note = 'dummy note',
+)
 
 # Set up
 app = create_app()
@@ -119,8 +122,7 @@ app = create_app()
 recs = [
     transaction_type_1, transaction_type_2,
     category_1, category_2, category_3, category_4, category_5, category_6,
-    user_1, user_2,
-    transaction_1, transaction_2, transaction_3, transaction_4
+    transaction_1, transaction_2, transaction_3, transaction_4, transaction_5, transaction_6,
 ] 
 db.session.bulk_save_objects(recs)
 db.session.commit()

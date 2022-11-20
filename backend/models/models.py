@@ -19,19 +19,19 @@ class Transaction(db.Model):
     __tablename__ = 'transaction'
     # Cols
     id = Column(String, primary_key=True)
-    user_id = Column(String, db.ForeignKey('user.id'), nullable=True)
     category_id = Column(String, db.ForeignKey('category.id'), nullable=True)
     date = Column(DateTime(timezone=True))
     amount = Column(Float)
     currency = Column(String)
+    note = Column(String, nullable=True)
 
-    def __init__(self, id, user_id, category_id, date, amount, currency):
+    def __init__(self, id, category_id, date, amount, currency, note):
         self.id = id
-        self.user_id = user_id
         self.category_id = category_id
         self.date = date
         self.amount = amount
-        self.currency = currency
+        self.currency = currency,
+        self.note = note
 
     def insert(self):
         db.session.add(self)
@@ -47,11 +47,11 @@ class Transaction(db.Model):
     def format(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
             'category_id': self.category_id,
-            'date': self.date,
+            'date': str(self.date),
             'amount': self.amount,
             'currency': self.currency,
+            'note': self.note,
         }
 
 
@@ -110,37 +110,4 @@ class Category(db.Model):
             'id': self.id,
             'transaction_type_id': self.transaction_type_id,
             'type': self.type
-        }
-
-
-"""
-User
-"""
-class User(db.Model):
-    __tablename__ = 'user'
-    # Cols
-    id = Column(String, primary_key=True)
-    name = Column(String)
-    # Rel
-    transactions = db.relationship('Transaction', backref='user', lazy=True)
-
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-
-    def format(self):
-        return {
-            'id': self.id,
-            'name': self.name
         }

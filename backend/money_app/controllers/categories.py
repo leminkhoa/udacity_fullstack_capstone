@@ -7,7 +7,9 @@ from sqlalchemy import exc
 from models.models import Category
 from models.request_schema import *
 from utils import *
+from auth import requires_auth
 from . import controllers_blueprint, paginate_transactions
+
 
 @controllers_blueprint.route('/categories')
 def get_categories():
@@ -35,8 +37,45 @@ def get_categories():
     })
 
 
+@controllers_blueprint.route('/categories/search', methods=['POST'])
+def search_categories():
+    body = request.get_json()
+    # Validate request
+    schema = SearchCategoryRequestSchema()
+    try:
+        # Validate request body against schema data types
+        schema.load(body)
+    except ValidationError:
+        print(sys.exc_info())
+        abort (400)
+    # Get search term
+    search_term = body.get('searchTerm')
+    # Query to find matched questions
+    try:
+        categories = Category.query.\
+            filter(Category.type.ilike(f'%{search_term}%')).\
+            all()
+    except:
+        print(sys.exc_info())
+        abort (500)
+    categories_dict = {}
+    for category in categories:
+        categories_dict[category.id] = {
+            'transaction_type_id': category.transaction_type_id,
+            'transaction_type': category.transaction_type.type,
+            'type': category.type
+
+        }
+    return jsonify({
+        'success': True,
+        'categories': categories_dict,
+        'total_categories': len(categories),
+    })
+
+
 @controllers_blueprint.route('/categories', methods=['POST'])
-def create_category():
+@requires_auth('create:category')
+def create_category(payload):
     # Request input
     body = request.get_json()
     # Validate request
@@ -69,8 +108,39 @@ def create_category():
     })
 
 
+@controllers_blueprint.route('/categories/<string:id>', methods=['PATCH'])
+@requires_auth('update:category')
+def update_category(payload, id):
+    body = request.get_json()
+    # Get title and recipe
+    transaction_type_id = body.get('transaction_type_id')
+    type = body.get('type')
+    try:
+        to_be_updated_category = Category.query.filter(Category.id == id).one_or_none()
+    except:
+        print(sys.exc_info())
+        abort (500)
+    # If cannot find category id, return 404
+    if to_be_updated_category is None:
+        abort (404)
+    # Update
+    try:
+        to_be_updated_category.transaction_type_id = transaction_type_id
+        to_be_updated_category.type = type
+        # Commit
+        to_be_updated_category.update()
+    except:
+        print(sys.exc_info())
+        abort (422)
+    return jsonify({
+        'success': True,
+        'category': [to_be_updated_category.format()]
+    })
+
+
 @controllers_blueprint.route('/categories/<string:id>', methods=['DELETE'])
-def delete_category(id):
+@requires_auth('delete:category')
+def delete_category(payload, id):
     try:
         category = Category.query.filter(Category.id == id).one_or_none()
     except:

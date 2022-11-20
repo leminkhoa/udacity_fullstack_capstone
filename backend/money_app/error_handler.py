@@ -1,5 +1,7 @@
 import flask 
 from flask import jsonify
+from auth import AuthError
+
 
 errorhandler_blueprint = flask.Blueprint('error_handler', __name__)
 
@@ -38,3 +40,12 @@ def internal_server_error(error):
         'error': 500,
         "message": "Internal Server Error"
     }), 500
+
+
+@errorhandler_blueprint.app_errorhandler(AuthError)
+def not_authenticated(auth_error):
+    return jsonify({
+        "success": False,
+        "error": auth_error.status_code,
+        "message": auth_error.error
+    }), auth_error.status_code
