@@ -12,7 +12,8 @@ from . import controllers_blueprint, paginate_transactions
 
 
 @controllers_blueprint.route('/categories')
-def get_categories():
+@requires_auth('get:category')
+def get_categories(payload):
     # Get users
     try:
         categories = Category.query.all()
@@ -38,7 +39,8 @@ def get_categories():
 
 
 @controllers_blueprint.route('/categories/search', methods=['POST'])
-def search_categories():
+@requires_auth('get:category')
+def search_categories(payload):
     body = request.get_json()
     # Validate request
     schema = SearchCategoryRequestSchema()

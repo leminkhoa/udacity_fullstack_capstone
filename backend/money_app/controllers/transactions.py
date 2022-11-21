@@ -12,6 +12,7 @@ from . import controllers_blueprint, paginate_transactions
 
 
 @controllers_blueprint.route('/transactions')
+@requires_auth('get:transaction')
 def get_transactions():
     # Request input
     body = request.get_json
@@ -43,6 +44,7 @@ def get_transactions():
 
 
 @controllers_blueprint.route('/transactions/search')
+@requires_auth('get:transaction')
 def search_transactions():
     body = request.get_json()
     # Validate request

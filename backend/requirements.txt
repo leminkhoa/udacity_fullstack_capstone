@@ -18,3 +18,4 @@ babel==2.9.0
 python-dateutil==2.6.0
 pycryptodome==3.3.1
 python-jose==3.3.0
+pytest

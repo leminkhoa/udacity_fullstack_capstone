@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, ValidationError
+from marshmallow import Schema, fields
 from marshmallow import ValidationError
 
 class CreateUserRequestSchema(Schema):
