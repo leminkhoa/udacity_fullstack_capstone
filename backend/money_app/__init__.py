@@ -19,7 +19,7 @@ from .error_handler import errorhandler_blueprint
 collections.Callable = collections.abc.Callable
 
 
-def create_app(test_config=None):
+def create_app():
     # create and configure the app
     app = Flask(__name__)
     # Load config
