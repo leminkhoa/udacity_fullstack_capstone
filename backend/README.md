@@ -60,7 +60,11 @@ To ensure all apis work properly, this repository use `pytest` to test all queri
 ## Call API From Postman
 Once Flask app is running, we can test API from local using **Postman**. 
 
-Import [Postman collection](./Udacity_Capstone_Fullstack.postman_collection.json) into Postman for loading pre-defined collections.
+Import [Postman collection](./postman/Udacity_Capstone_Fullstack.postman_collection.json) into Postman for loading pre-defined collections.
+
+There are 2 environments to run:
+- Local: To call api from local database. Import environment [here](./postman/Udacity%20Money%20App%20Environment%20-%20Local.postman_environment.json)
+- Remote - **Heroku**: To call api from Heroku App. Import environment [here](./postman/Udacity%20Money%20App%20Environment%20-%20Heroku.postman_environment.json)
 
 ### API Documentations
 

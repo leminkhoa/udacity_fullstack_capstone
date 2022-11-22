@@ -124,6 +124,10 @@ recs = [
     category_1, category_2, category_3, category_4, category_5, category_6,
     transaction_1, transaction_2, transaction_3, transaction_4, transaction_5, transaction_6,
 ] 
-db.session.bulk_save_objects(recs)
-db.session.commit()
-print("Sample records have been successfully added!")
+
+try:
+    db.session.bulk_save_objects(recs)
+    db.session.commit()
+    print("Sample records have been successfully added!")
+except Exception:
+    print("Sample records have already been loaded. Skip this step!")

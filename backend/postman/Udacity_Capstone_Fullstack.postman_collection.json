@@ -41,11 +41,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories",
+							"raw": "{{endpoint}}/categories",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories"
 							]
@@ -82,11 +81,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories",
+							"raw": "{{endpoint}}/categories",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories"
 							]
@@ -123,11 +121,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/search",
+							"raw": "{{endpoint}}/categories/search",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories",
 								"search"
@@ -165,11 +162,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/1",
+							"raw": "{{endpoint}}/categories/1",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories",
 								"1"
@@ -207,11 +203,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/4",
+							"raw": "{{endpoint}}/categories/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories",
 								"4"
@@ -252,11 +247,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions?page=1",
+							"raw": "{{endpoint}}/transactions?page=1",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions"
 							],
@@ -299,11 +293,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/search?page=1",
+							"raw": "{{endpoint}}/transactions/search?page=1",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions",
 								"search"
@@ -347,11 +340,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions",
+							"raw": "{{endpoint}}/transactions",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions"
 							]
@@ -388,11 +380,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/4",
+							"raw": "{{endpoint}}/transactions/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions",
 								"4"
@@ -430,11 +421,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/4",
+							"raw": "{{endpoint}}/transactions/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions",
 								"4"
@@ -510,11 +500,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories",
+							"raw": "{{endpoint}}/categories",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories"
 							]
@@ -550,11 +539,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories",
+							"raw": "{{endpoint}}/categories",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories"
 							]
@@ -600,11 +588,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/search",
+							"raw": "{{endpoint}}/categories/search",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories",
 								"search"
@@ -641,11 +628,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/4",
+							"raw": "{{endpoint}}/categories/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories",
 								"4"
@@ -682,11 +668,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/4",
+							"raw": "{{endpoint}}/categories/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"categories",
 								"4"
@@ -727,11 +712,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions?page=1",
+							"raw": "{{endpoint}}/transactions?page=1",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions"
 							],
@@ -783,11 +767,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/search?page=1",
+							"raw": "{{endpoint}}/transactions/search?page=1",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions",
 								"search"
@@ -830,11 +813,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions",
+							"raw": "{{endpoint}}/transactions",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions"
 							]
@@ -870,11 +852,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/4",
+							"raw": "{{endpoint}}/transactions/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions",
 								"4"
@@ -911,11 +892,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/4",
+							"raw": "{{endpoint}}/transactions/4",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "5000",
 							"path": [
 								"transactions",
 								"4"

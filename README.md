@@ -72,3 +72,5 @@ This project uses [Auth0](https://auth0.com/) for Authentication purposes.
 
 [View the README.md within ./auth0 for more details.](./auth0/README.md)
 
+### Heroku App
+App is deployed to Heroku endpoint: `https://udacity-money-app.herokuapp.com/`
