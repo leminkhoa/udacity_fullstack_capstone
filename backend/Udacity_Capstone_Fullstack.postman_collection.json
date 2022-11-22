@@ -1,0 +1,674 @@
+{
+	"info": {
+		"_postman_id": "858ff937-0c3a-4c8a-9b6f-9b37cc7cd61f",
+		"name": "Udacity_Capstone_Fullstack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14928843"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "/categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transaction_type_id\": \"1\",\r\n    \"type\": \"Utilities\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"searchTerm\": \"Food\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories/search",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/<id>",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transaction_type_id\": \"1\",\r\n    \"type\": \"something\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories/cd90c26a-682c-11ed-a437-00155d2022ef",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories",
+								"cd90c26a-682c-11ed-a437-00155d2022ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions?page=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"start_date\": \"2022-01-30T22:30:00+07:00\",\r\n    \"end_date\": \"2022-02-03T22:30:00+07:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions/search?page=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\": \"1\",\r\n    \"date\": \"2022-03-03T15:00:00Z\",\r\n    \"amount\": 7,\r\n    \"currency\": \"$\",\r\n    \"note\": \"dummy note\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/<id>",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\": \"1\",\r\n    \"date\": \"2022-05-02T1:00:00\",\r\n    \"amount\": 50,\r\n    \"currency\": \"$\",\r\n    \"note\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions/4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions/1337e1c2-6a58-11ed-a141-00155dc01804",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions",
+								"1337e1c2-6a58-11ed-a141-00155dc01804"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV6ZGp5TU15SmZnQTBsYnpEeUtqdSJ9.eyJpc3MiOiJodHRwczovL2tob2FsZTE5OTMudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzN2EwYzg3YzBmOGFhYmZmNjRhNTlmYSIsImF1ZCI6Im1vbmV5X2FwcCIsImlhdCI6MTY2OTEyMTM2NywiZXhwIjoxNjY5MTI4NTY3LCJhenAiOiJXWFZyNGdRcU9CTVVCQlZWVGROakJzYXc1ODQ3aXFGYiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmNhdGVnb3J5IiwiY3JlYXRlOnRyYW5zYWN0aW9uIiwiZGVsZXRlOmNhdGVnb3J5IiwiZGVsZXRlOnRyYW5zYWN0aW9uIiwiZ2V0OmNhdGVnb3J5IiwiZ2V0OnRyYW5zYWN0aW9uIiwidXBkYXRlOmNhdGVnb3J5IiwidXBkYXRlOnRyYW5zYWN0aW9uIl19.b5sWzUa8TK_hKpv4LPgqkyiXEw7eof8z1lTslHDaBjZeA7fMyZdy2zM6moWzk7kYmxyh_WJBnuRCQOEvZcMUCqpI2eXgsrlZ_u8bv9XjvhXYMb3DF1rwy0uJbLSUpOyaQN4HJHA_Oti4wSaDyUvMSjanJAA2p1W9ccoc26RREuhQ80gZHqjH6opJnC87_adWWCwfflijbvRI7JPimqT2t8O0SsI4KN9kpi_ix4zAoj1bL8ZxHlybNFF8qrEPvZaRQqfh8rBUtaK279YrKY5oMpO_KBY70wAyAoCZZFRRz1uy1W8LEEjEDzH66BkEVE1HncSRE2b8-lUAU5lNgSNruw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transaction_type_id\": \"1\",\r\n    \"type\": \"Utilities\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"searchTerm\": \"Food\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories/search",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/<id>",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transaction_type_id\": \"1\",\r\n    \"type\": \"something\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories/09b447a0-688a-11ed-972f-00155d202506",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories",
+								"09b447a0-688a-11ed-972f-00155d202506"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/categories/cd90c26a-682c-11ed-a437-00155d2022ef",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"categories",
+								"cd90c26a-682c-11ed-a437-00155d2022ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions?page=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"start_date\": \"2022-01-30T22:30:00+07:00\",\r\n    \"end_date\": \"2022-02-03T22:30:00+07:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions/search?page=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\": \"1\",\r\n    \"date\": \"2022-03-03T15:00:00Z\",\r\n    \"amount\": 7,\r\n    \"currency\": \"$\",\r\n    \"note\": \"dummy note\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/<id>",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\": \"1\",\r\n    \"date\": \"2022-05-02T1:00:00\",\r\n    \"amount\": 50,\r\n    \"currency\": \"$\",\r\n    \"note\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions/4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transactions/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/transactions/cdd4444e-681e-11ed-a90b-00155d2022ef",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transactions",
+								"cdd4444e-681e-11ed-a90b-00155d2022ef"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV6ZGp5TU15SmZnQTBsYnpEeUtqdSJ9.eyJpc3MiOiJodHRwczovL2tob2FsZTE5OTMudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzN2EwY2FiYThiMmMyZWM2MGIzMDEyNCIsImF1ZCI6Im1vbmV5X2FwcCIsImlhdCI6MTY2OTEyMTYzNSwiZXhwIjoxNjY5MTI4ODM1LCJhenAiOiJXWFZyNGdRcU9CTVVCQlZWVGROakJzYXc1ODQ3aXFGYiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmNhdGVnb3J5IiwiZ2V0OnRyYW5zYWN0aW9uIl19.MrKg3E4V9jsQFbmIyPn4z8qek2oshXNNdlMGycQ8_8mbXmDMszkuViQEzlJEzMF2cY6qxnR5sjVAJ82T4O88u1r4LDdc03iV5EqeTpSSn3x-i7aUbtyrUwd2v5zQj2XuYornoxIuDE-c7AIPV0vs3QiytdyaaifUFpBd_Z9BiVEE58nxIdFAUk29PVhdar8cKBnpBD6g5b8IdrZmHoJbsjzeGCIu5n61bAolc57IMMIrYYMWT52G-n7o4bFC3End6qfVKTVPKp7GekIO7tTjmmKzc_mCGEG9PeZYna4LrgjuoQvfAlPTzB6x2Um13eGTuv7gLZ47Ast5a0W5VEzxmA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
