@@ -71,3 +71,4 @@ The `./backend` directory contains a partially completed Flask server.
 This project uses [Auth0](https://auth0.com/) for Authentication purposes.
 
 [View the README.md within ./auth0 for more details.](./auth0/README.md)
+
