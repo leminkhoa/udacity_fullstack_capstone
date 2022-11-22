@@ -5,7 +5,7 @@
 
 **URL** : `/transactions/search`
 
-**Method** : `GET`
+**Method** : `POST`
 
 **Query Params**: 
 - page: Page number to be shown (Default: 1)

@@ -38,7 +38,7 @@ def get_transactions(payload):
     })
 
 
-@controllers_blueprint.route('/transactions/search')
+@controllers_blueprint.route('/transactions/search', methods=['POST'])
 @requires_auth('get:transaction')
 def search_transactions(payload):
     body = request.get_json()

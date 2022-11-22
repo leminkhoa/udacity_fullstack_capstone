@@ -5,7 +5,7 @@
 
 **URL** : `/categories/search`
 
-**Method** : `GET`
+**Method** : `POST`
 
 **Auth required** : YES
 

@@ -85,6 +85,8 @@ email: user@gmail.com
 password: User@123
 ```
 
+Generated token will expire in: `72000 seconds`
+
 ## Verify token permissions
 
 A quick way to verify token permissions is copy access token from browser and paste them to https://jwt.io/

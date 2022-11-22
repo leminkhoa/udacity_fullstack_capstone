@@ -11,6 +11,20 @@
 			"item": [
 				{
 					"name": "/categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -41,6 +55,20 @@
 				},
 				{
 					"name": "/categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -68,6 +96,20 @@
 				},
 				{
 					"name": "/categories/search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -96,6 +138,20 @@
 				},
 				{
 					"name": "/categories/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -124,6 +180,20 @@
 				},
 				{
 					"name": "/categories/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -137,14 +207,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/cd90c26a-682c-11ed-a437-00155d2022ef",
+							"raw": "localhost:5000/categories/4",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"categories",
-								"cd90c26a-682c-11ed-a437-00155d2022ef"
+								"4"
 							]
 						}
 					},
@@ -152,6 +222,20 @@
 				},
 				{
 					"name": "/transactions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -188,11 +272,22 @@
 				},
 				{
 					"name": "/transactions/search",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -225,6 +320,20 @@
 				},
 				{
 					"name": "/transactions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -252,6 +361,20 @@
 				},
 				{
 					"name": "/transactions/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -280,6 +403,20 @@
 				},
 				{
 					"name": "/transactions/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -293,14 +430,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/1337e1c2-6a58-11ed-a141-00155dc01804",
+							"raw": "localhost:5000/transactions/4",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"transactions",
-								"1337e1c2-6a58-11ed-a141-00155dc01804"
+								"4"
 							]
 						}
 					},
@@ -312,7 +449,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV6ZGp5TU15SmZnQTBsYnpEeUtqdSJ9.eyJpc3MiOiJodHRwczovL2tob2FsZTE5OTMudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzN2EwYzg3YzBmOGFhYmZmNjRhNTlmYSIsImF1ZCI6Im1vbmV5X2FwcCIsImlhdCI6MTY2OTEyMTM2NywiZXhwIjoxNjY5MTI4NTY3LCJhenAiOiJXWFZyNGdRcU9CTVVCQlZWVGROakJzYXc1ODQ3aXFGYiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmNhdGVnb3J5IiwiY3JlYXRlOnRyYW5zYWN0aW9uIiwiZGVsZXRlOmNhdGVnb3J5IiwiZGVsZXRlOnRyYW5zYWN0aW9uIiwiZ2V0OmNhdGVnb3J5IiwiZ2V0OnRyYW5zYWN0aW9uIiwidXBkYXRlOmNhdGVnb3J5IiwidXBkYXRlOnRyYW5zYWN0aW9uIl19.b5sWzUa8TK_hKpv4LPgqkyiXEw7eof8z1lTslHDaBjZeA7fMyZdy2zM6moWzk7kYmxyh_WJBnuRCQOEvZcMUCqpI2eXgsrlZ_u8bv9XjvhXYMb3DF1rwy0uJbLSUpOyaQN4HJHA_Oti4wSaDyUvMSjanJAA2p1W9ccoc26RREuhQ80gZHqjH6opJnC87_adWWCwfflijbvRI7JPimqT2t8O0SsI4KN9kpi_ix4zAoj1bL8ZxHlybNFF8qrEPvZaRQqfh8rBUtaK279YrKY5oMpO_KBY70wAyAoCZZFRRz1uy1W8LEEjEDzH66BkEVE1HncSRE2b8-lUAU5lNgSNruw",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV6ZGp5TU15SmZnQTBsYnpEeUtqdSJ9.eyJpc3MiOiJodHRwczovL2tob2FsZTE5OTMudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzN2EwYzg3YzBmOGFhYmZmNjRhNTlmYSIsImF1ZCI6Im1vbmV5X2FwcCIsImlhdCI6MTY2OTEyOTYxOSwiZXhwIjoxNjY5MjAxNjE5LCJhenAiOiJXWFZyNGdRcU9CTVVCQlZWVGROakJzYXc1ODQ3aXFGYiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmNhdGVnb3J5IiwiY3JlYXRlOnRyYW5zYWN0aW9uIiwiZGVsZXRlOmNhdGVnb3J5IiwiZGVsZXRlOnRyYW5zYWN0aW9uIiwiZ2V0OmNhdGVnb3J5IiwiZ2V0OnRyYW5zYWN0aW9uIiwidXBkYXRlOmNhdGVnb3J5IiwidXBkYXRlOnRyYW5zYWN0aW9uIl19.Y8ueII_QGl6RB_dkJyjt6-RcY6aHiUI7novsVzSQM0GiIrF_GU0_EqU_yVvlEKPT2-D_YsbVLd2sYTJ6i-PYSs7qXW5Z1PMTDPfjly7kbMJoR8mU14gBsJuaiBaxgJH0n-XmTV5l9XF3nxCo_uI-pmKCOsdHqhz9QZwxiXRA-5MYNvETEM2Op0ss5FAG59CY90XXPvDvEm5VhCwpQWkF_AhPzVRRHUL1uhn6l7NLE_ExgE9zQrPzRreSVGOB2-z1-F57TElIXykgHkSqeASa2Qsacjd60PWChAfcmU8DGQi8CUXvRX56u85QPTYL28eZIK819a2bQfYSzn5E0Hl2KQ",
 						"type": "string"
 					}
 				]
@@ -343,6 +480,20 @@
 			"item": [
 				{
 					"name": "/categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -373,6 +524,19 @@
 				},
 				{
 					"name": "/categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -400,6 +564,29 @@
 				},
 				{
 					"name": "/categories/search",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -428,6 +615,19 @@
 				},
 				{
 					"name": "/categories/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -441,14 +641,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/09b447a0-688a-11ed-972f-00155d202506",
+							"raw": "localhost:5000/categories/4",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"categories",
-								"09b447a0-688a-11ed-972f-00155d202506"
+								"4"
 							]
 						}
 					},
@@ -456,6 +656,19 @@
 				},
 				{
 					"name": "/categories/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -469,14 +682,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/categories/cd90c26a-682c-11ed-a437-00155d2022ef",
+							"raw": "localhost:5000/categories/4",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"categories",
-								"cd90c26a-682c-11ed-a437-00155d2022ef"
+								"4"
 							]
 						}
 					},
@@ -484,6 +697,20 @@
 				},
 				{
 					"name": "/transactions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -520,11 +747,31 @@
 				},
 				{
 					"name": "/transactions/search",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -557,6 +804,19 @@
 				},
 				{
 					"name": "/transactions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -584,6 +844,19 @@
 				},
 				{
 					"name": "/transactions/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -612,6 +885,19 @@
 				},
 				{
 					"name": "/transactions/<id>",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -625,14 +911,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/transactions/cdd4444e-681e-11ed-a90b-00155d2022ef",
+							"raw": "localhost:5000/transactions/4",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"transactions",
-								"cdd4444e-681e-11ed-a90b-00155d2022ef"
+								"4"
 							]
 						}
 					},
@@ -644,7 +930,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV6ZGp5TU15SmZnQTBsYnpEeUtqdSJ9.eyJpc3MiOiJodHRwczovL2tob2FsZTE5OTMudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzN2EwY2FiYThiMmMyZWM2MGIzMDEyNCIsImF1ZCI6Im1vbmV5X2FwcCIsImlhdCI6MTY2OTEyMTYzNSwiZXhwIjoxNjY5MTI4ODM1LCJhenAiOiJXWFZyNGdRcU9CTVVCQlZWVGROakJzYXc1ODQ3aXFGYiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmNhdGVnb3J5IiwiZ2V0OnRyYW5zYWN0aW9uIl19.MrKg3E4V9jsQFbmIyPn4z8qek2oshXNNdlMGycQ8_8mbXmDMszkuViQEzlJEzMF2cY6qxnR5sjVAJ82T4O88u1r4LDdc03iV5EqeTpSSn3x-i7aUbtyrUwd2v5zQj2XuYornoxIuDE-c7AIPV0vs3QiytdyaaifUFpBd_Z9BiVEE58nxIdFAUk29PVhdar8cKBnpBD6g5b8IdrZmHoJbsjzeGCIu5n61bAolc57IMMIrYYMWT52G-n7o4bFC3End6qfVKTVPKp7GekIO7tTjmmKzc_mCGEG9PeZYna4LrgjuoQvfAlPTzB6x2Um13eGTuv7gLZ47Ast5a0W5VEzxmA",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV6ZGp5TU15SmZnQTBsYnpEeUtqdSJ9.eyJpc3MiOiJodHRwczovL2tob2FsZTE5OTMudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYzN2EwY2FiYThiMmMyZWM2MGIzMDEyNCIsImF1ZCI6Im1vbmV5X2FwcCIsImlhdCI6MTY2OTEyOTM4MSwiZXhwIjoxNjY5MjAxMzgxLCJhenAiOiJXWFZyNGdRcU9CTVVCQlZWVGROakJzYXc1ODQ3aXFGYiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmNhdGVnb3J5IiwiZ2V0OnRyYW5zYWN0aW9uIl19.0QocLUUk4F3PjIK4btTgTnU4ESQESupnF4BOECpodkNA9vKiirAPtLWlJ4MeVRW1kydIoNojSAwtEOS3UQHCkgLTs339WbLSky9mkVhgo93vKE_QZmlq5jnLu4m4ZMoVAiKJVTia9ZjVvPGF3tjMEj0gOHpTUvEsRM-Kw8gigg7kzUy8_hu080WoWW1mfsanNY6ALikPA-X26SzYEObwRJSF6PQ75_60i4Is52dTVWOQDAkQA5-qRTN-ILVyFyb-JKPvbPGT5rNNk7WTCxtScH4nZCeexCjXE4W3uKtKMaKA8LCpsNgJIgLtVJAMqtuTPFwF_I0HRpJtjkx4i94Bbw",
 						"type": "string"
 					}
 				]
