@@ -114,6 +114,14 @@ def create_category(payload):
 @requires_auth('update:category')
 def update_category(payload, id):
     body = request.get_json()
+    # Validate request
+    schema = UpdateCategoryRequestSchema()
+    try:
+        # Validate request body against schema data types
+        schema.load(body)
+    except ValidationError:
+        print(sys.exc_info())
+        abort (400)
     # Get title and recipe
     transaction_type_id = body.get('transaction_type_id')
     type = body.get('type')
@@ -133,10 +141,10 @@ def update_category(payload, id):
         to_be_updated_category.update()
     except:
         print(sys.exc_info())
-        abort (422)
+        abort (500)
     return jsonify({
         'success': True,
-        'category': [to_be_updated_category.format()]
+        'category': to_be_updated_category.format()
     })
 
 

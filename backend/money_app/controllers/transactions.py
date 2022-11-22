@@ -13,12 +13,7 @@ from . import controllers_blueprint, paginate_transactions
 
 @controllers_blueprint.route('/transactions')
 @requires_auth('get:transaction')
-def get_transactions():
-    # Request input
-    body = request.get_json
-    # Find query parameters
-    start_date = body.get('start_date', None)
-    end_date = body.get('end_date', None)
+def get_transactions(payload):
     # Get users
     try:
         transactions = Transaction.query.\
@@ -45,7 +40,7 @@ def get_transactions():
 
 @controllers_blueprint.route('/transactions/search')
 @requires_auth('get:transaction')
-def search_transactions():
+def search_transactions(payload):
     body = request.get_json()
     # Validate request
     schema = SearchTransactionRequestSchema()
@@ -102,11 +97,11 @@ def create_transaction(payload):
     # Create a new transaction
     new_transaction = Transaction(
         id = str(generate_uuid()),
-        user_id = body.get('user_id'),
         category_id = body.get('category_id'),
         date = request_date,
         amount = body.get('amount'),
-        currency = body.get('currency')
+        currency = body.get('currency'),
+        note = body.get('note', '')
     )
     # Insert
     try:
@@ -127,6 +122,14 @@ def create_transaction(payload):
 @requires_auth('update:transaction')
 def update_transaction(payload, id):
     body = request.get_json()
+    # Validate request
+    schema = CreateTransactionRequestSchema()
+    try:
+        # Validate request body against schema data types
+        schema.load(body)
+    except ValidationError:
+        print(sys.exc_info())
+        abort (400)
     # Get title and recipe
     category_id = body.get('category_id')
     date = body.get('date')
@@ -134,7 +137,9 @@ def update_transaction(payload, id):
     currency = body.get('currency')
     note = body.get('note')
     try:
-        to_be_updated_transaction = Transaction.query.filter(Transaction.id == id).one_or_none()
+        to_be_updated_transaction = Transaction.query.\
+            filter(Transaction.id == id).\
+            one_or_none()
     except:
         print(sys.exc_info())
         abort (500)
@@ -150,12 +155,15 @@ def update_transaction(payload, id):
         to_be_updated_transaction.note = note
         # Commit
         to_be_updated_transaction.update()
-    except:
+    except exc.IntegrityError:
         print(sys.exc_info())
         abort (422)
+    except:
+        print(sys.exc_info())
+        abort (500)
     return jsonify({
         'success': True,
-        'transaction': [to_be_updated_transaction.format()]
+        'transaction': to_be_updated_transaction.format()
     })
 
 

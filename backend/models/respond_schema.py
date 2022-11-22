@@ -10,6 +10,22 @@ class CategorySchema(Schema):
 class GetCategoryRespondSchema(Schema):
     categories = fields.Dict(
         keys=fields.String(),
-        values=fields.Nested(CategorySchema))
+        values=fields.Nested(CategorySchema)
+    )
     success = fields.Boolean()
     total_categories = fields.Integer()
+
+
+class TransactionSchema(Schema):
+    id = fields.String()
+    category_id = fields.String(allow_none=True)
+    date = fields.String()
+    amount = fields.Float()
+    currency = fields.String()
+    note = fields.String()
+
+
+class GetTransactionRespondSchema(Schema):
+    transactions = fields.List(fields.Nested(TransactionSchema))
+    success = fields.Boolean()
+    total_transactions = fields.Integer()
